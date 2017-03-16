@@ -9,9 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
-    </body>
+    <%= render 'layouts/navigation' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 
-    <br><br>
-    <footer>Copyright Ocular Candy Productions 2017</footer>
+  <div class="myfooter"
+    <%= render 'layouts/footer' %>
+  </div>
 </html>
