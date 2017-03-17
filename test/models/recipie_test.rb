@@ -1,35 +1,35 @@
 require 'test_helper'
 
-class RecipieTest < ActiveSupport::TestCase
+class RecipeTest < ActiveSupport::TestCase
   def setup
-    @recipie = Recipie.new(name: "Vegies", description: "Great Vegie Recipie")
+    @recipe = Recipe.new(name: "Vegies", description: "Great Vegie Recipe")
   end
 
-  test "recipie should be valid" do
-    assert @recipie.valid?
+  test "recipe should be valid" do
+    assert @recipe.valid?
   end
   
   test "name should be present" do
-    @recipie.name = " "
+    @recipe.name = " "
 
-    assert_not @recipie.valid?
+    assert_not @recipe.valid?
   end
 
   test "description should be present" do
-    @recipie.description = ""
+    @recipe.description = ""
 
-    assert_not @recipie.valid?
+    assert_not @recipe.valid?
   end
 
   test "description should have minimum 5 chars" do
-    @recipie.description = "a" *3
+    @recipe.description = "a" *3
 
-    assert_not @recipie.valid?
+    assert_not @recipe.valid?
   end
 
   test "description should have maximum 500 chars" do
-    @recipie.description = "a" *501
+    @recipe.description = "a" *501
 
-    assert_not @recipie.valid?
+    assert_not @recipe.valid?
   end
 end
